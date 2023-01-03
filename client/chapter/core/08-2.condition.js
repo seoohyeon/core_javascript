@@ -32,10 +32,12 @@ let whichTruthy = false || "" || [2, 3].length || { thisIsTruthy: true };
 let userName = prompt("사용자 이름을 입력해주세요", "");
 let pw;
 
-if (userName.localeCompare("Admin")) {
+if (userName?.localeCompare("Admin")) {
+  //
+
   pw = prompt("비번을 입력하시오.");
   console.log(typeof pw);
-  if (pw === "TheMaster") {
+  if (pw?.toLowerCase() === "themaster") {
     alert("환영합니다!");
   } else if (pw === "" || pw === null) {
     alert("취소되었습니다.");
