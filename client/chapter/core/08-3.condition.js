@@ -2,51 +2,43 @@
 /* Switch                                                                 */
 /* ---------------------------------------------------------------------- */
 
-const MORNING = "아침",
-  LUNCH = "점심",
-  DINNER = "저녁",
-  NIGHT = "밤",
-  LATE_NIGHT = "심야",
-  DAWN = "새벽";
+const MORNING = '아침',
+  LUNCH = '점심',
+  DINNER = '저녁',
+  NIGHT = '밤',
+  LATE_NIGHT = '심야',
+  DAWN = '새벽';
 
-let thisTime;
+let thisTime = DAWN;
 
 /* 다양한 상황에 맞게 처리 --------------------------------------------------- */
 
-// thisTime = prompt("언제 무얼하실까요?");
+switch (thisTime) {
+  case MORNING: console.log('디스코드를 켠다.'); break;
+  case LUNCH: console.log('점심을 맛있게 먹는다'); break;
+  case DINNER: console.log('멘토링 수업 준비를 한다.'); break;
+  case NIGHT: console.log('스터디 발표 준비를 한다.'); break;
+  case LATE_NIGHT:
+  case DAWN: console.log('꿈속에서 배웠던 코드를 생각한다.'); break;
+}
 
-// switch (thisTime) {
-//   case value:
-//     break;
 
-//   default:
-//     break;
-// }
 
-// switch (thisTime) {
-//   case "아침":
-//     console.log(MORNING + "입니다");
-//     break;
-//   case "점심":
-//     console.log(LUNCH + "입니다");
-//     break;
-//   case "저녁":
-//     console.log(DINNER + "입니다");
-//     break;
-//   case "밤":
-//     console.log(NIGHT + "입니다");
-//     break;
-//   case "심야":
-//     console.log(LATE_NIGHT + "입니다");
-//     break;
-//   case "새벽":
-//     console.log(DAWN + "입니다");
-//     break;
-//   default:
-//     console.log("??");
-// }
-// 조건 유형(case): '아침'
-// '뉴스 기사 글을 읽는다.'
+if(thisTime === MORNING){
+  console.log('디스코드를 켠다.');
+}else if(thisTime === LUNCH){
+  console.log('점심을 맛있게 먹는다');
+}else if(thisTime === DINNER){
+  console.log('멘토링 수업 준비를 한다.');
+}else if(thisTime === NIGHT){
+  console.log('스터디 발표 준비를 한다.');
+}else if(thisTime === LATE_NIGHT || thisTime === DAWN){
+  console.log('드림 코딩');
+}
+
+
+
+
 
 // 조건 유형(case): '점심'
 // '자주 가는 식당에 가서 식사를 한다.'
@@ -63,52 +55,103 @@ let thisTime;
 
 /* switch문 → if문 변환 --------------------------------------------------- */
 
-// if (thisTime === "아침") {
-//   console.log(MORNING + "입니다");
-// } else if (thisTime === "점심") {
-//   console.log(LUNCH + "입니다");
-// } else if (thisTime === "저녁") {
-//   console.log(DINNER + "입니다");
-// } else if (thisTime === "밤") {
-//   console.log(NIGHT + "입니다");
-// } else if (thisTime === "심야") {
-//   console.log(LATE_NIGHT + "입니다");
-// } else if (thisTime === "새벽") {
-//   console.log(DAWN + "입니다");
-// }
+
+
+// console.log('디스코드를 켠다.');
+// console.log('점심을 맛있게 먹는다');
+// console.log('멘토링 수업 준비를 한다.');
+// console.log('스터디 발표 준비를 한다.');
+// console.log('꿈속에서 배웠던 코드를 생각한다.');
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* switch vs. if -------------------------------------------------------- */
 
-function getRandom(n) {
-  return Math.round(Math.random() * n);
+
+
+
+
+
+
+// 0 ~ 6 의 값을 받는다.
+
+// 0 = '일'
+// 1 = '월'
+// 2 = '화'
+// 3 = '수'
+// 4 = '목'
+// 5 = '금'
+// 6 = '토'
+
+
+
+// 임의 숫자를 넣어서 무슨 요일 인지를 알려주는 함수를 만들어보자 
+
+
+
+function getRandom(n){
+  return Math.round(Math.random() * n)
 }
 
-function getDay(number) {
-  switch (number) {
-    case 0:
-      console.log("일");
-      break;
-    case 1:
-      console.log("월");
-      break;
-    case 2:
-      console.log("화");
-      break;
-    case 3:
-      console.log("수");
-      break;
-    case 4:
-      console.log("목");
-      break;
-    case 5:
-      console.log("금");
-      break;
-    case 6:
-      console.log("토");
-      break;
+
+
+
+function getDay(dayValue){
+
+  switch (dayValue) {
+    case 0: return '일';
+    case 1: return '월';
+    case 2: return '화';
+    case 3: return '수';
+    case 4: return '목';
+    case 5: return '금';
+    case 6: return '토';
+  
   }
 }
 
-let result = getDay(getRandom(1));
+
+let result = getDay(getRandom(6));
 
 console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
