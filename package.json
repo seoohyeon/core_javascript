@@ -1,9 +1,12 @@
 {
   "scripts": {
+    "all": "run-p serve start",
+    "serve": "json-server server/data/data.json",
     "start": "npx live-server client --host=localhost --port=5500 --no-browser"
   },
   "devDependencies": {
     "eslint": "^8.30.0",
+    "json-server": "^0.17.1",
     "live-server": "^1.2.2"
   }
 }
